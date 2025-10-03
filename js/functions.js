@@ -83,6 +83,9 @@ function openPopup(popupName) {
 
 function closePopup() {
     $(`.popup`).fadeOut(1000);
+    $(`body`).css({
+        overflowY: "auto",
+    });
 }
 
 function showSectors() {

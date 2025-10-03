@@ -54,9 +54,6 @@ $("#buttonTop").click(function () {
 
 $(`.popup`).click((e) => {
     closePopup();
-    $(`body`).css({
-        overflowY: "auto",
-    });
 });
 
 $(`.popup .box`).click((e) => {
@@ -76,19 +73,9 @@ $(".navbar .nav-link").click(function (e) {
 
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+window.addEventListener("DOMContentLoaded",() => {
+    $(Loading).fadeOut(500)
+    $(`body`).css({
+        overflowY: "auto",
+    });
+})
