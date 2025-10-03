@@ -1,0 +1,62 @@
+@use "../abstracts/" as *;
+
+#Services {
+    .container {
+        .row {
+            .part {
+                .item {
+                    width: 90%;
+                    margin: auto;
+                    padding: 20px 50px;
+                    border-radius: 25px;
+                    transition-duration: 0.5s;
+                    @include respond(350) {
+                        padding: 20px 20px;
+                        width: 100%;
+                    }
+                    @include respond(650) {
+                        padding: 20px 50px;
+                        width: 90%;
+                    }
+                    @include respond(850) {
+                        padding: 20px 60px;
+                        width: 80%;
+                    }
+                    @include respond(1050) {
+                        padding: 20px 35px;
+                        width: 95%;
+                    }
+                    &:hover {
+                        background-color: #fff;
+                        transform: translateY(-10px);
+                        box-shadow: 0 20px 50px #00000080;
+                    }
+                    img {
+                        width: 65px;
+                    }
+                    h5 {
+                        @include respond(350) {
+                            font-size: 18px;
+                        }
+                        @include respond(850) {
+                            font-size: 20px;
+                        }
+                    }
+                    p {
+                        @include respond(350) {
+                            font-size: 14px;
+                        }
+                        @include respond(850) {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .servicePopupBtn{
+        cursor: pointer;
+        color: $firstColor;
+        font-weight: 600;
+    }
+}

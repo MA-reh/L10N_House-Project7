@@ -1,0 +1,95 @@
+@use "../abstracts/index" as *;
+
+#Contact {
+    .container {
+        .content {
+            > .row {
+                .part {
+                    .item {
+                        height: 100%;
+                        background-color: #fff;
+                        padding: 25px;
+                        border-radius: 10px;
+                        @include respond(350){
+                            width: 300px;
+                            margin: auto;
+                        }
+                        @include respond(450){
+                            width: 350px;
+                        }
+                        @include respond(650){
+                            width: 450px;
+                        }
+                    }
+                    &:nth-of-type(1) {
+                        .item {
+                            form {
+                                textarea {
+                                    resize: none;
+                                }
+                                button {
+                                    width: fit-content;
+                                    color: #fff;
+                                    background-color: $firstColor;
+                                    transition-duration: 0.3s;
+                                    padding: 10px 20px;
+                                    border: 2px solid $secondColor;
+                                    border-radius: 10px;
+                                    &:hover {
+                                        background-color: $secondColor;
+                                        border-color: $firstColor;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        .item {
+                            .items {
+                                .icon {
+                                    i {
+                                        color: $secondColor;
+                                    }
+                                }
+                                .text {
+                                    h6 {
+                                        font-weight: 700;
+                                    }
+                                }
+                            }
+                            .icons {
+                                @include flex($jc:flex-start);
+                                .part {
+                                    width: 45px;
+                                    height: 45px;
+                                    @include flex;
+                                    border-radius: 100%;
+                                    cursor: pointer;
+                                    &:nth-of-type(1) {
+                                        background-color: #0045b5;
+                                    }
+                                    &:nth-of-type(2) {
+                                        background-color: #c52661;
+                                    }
+                                    &:nth-of-type(3) {
+                                        background-color: #f70000;
+                                    }
+                                    a{
+                                        text-decoration: none;
+                                        @include flex;
+                                        width: 100%;
+                                        height: 100%;
+                                        i {
+                                            font-size: 23px;
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

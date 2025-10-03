@@ -1,0 +1,233 @@
+@use "../abstracts/" as *;
+
+.popup {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    overflow: auto;
+    display: none;
+    .box {
+        width: 75%;
+        background-color: #fff;
+        margin: 20px auto;
+        border-radius: 10px;
+        @include respond(350) {
+            width: 85%;
+        }
+        .header {
+            position: relative;
+            text-align: center;
+            h6 {
+                font-weight: 700;
+            }
+            i {
+                @include position($t: 50%, $r: 10px);
+                transform: translateY(-50%);
+                cursor: pointer;
+                font-size: 13px;
+            }
+        }
+        .body {
+            padding: 10px 20px;
+
+            h4 {
+                @include respond(350) {
+                    font-size: 18px;
+                }
+                @include respond(450) {
+                    font-size: 22px;
+                }
+                @include respond(1050) {
+                    font-size: 25px;
+                }
+            }
+
+            .row {
+                img {
+                    border-radius: 10px;
+                    margin: auto;
+                    display: block;
+                }
+            }
+
+            .sections {
+                .section {
+                    h5 {
+                        @include respond(350) {
+                            font-size: 16px;
+                        }
+                        @include respond(450) {
+                            font-size: 20px;
+                        }
+                    }
+                    ol {
+                        @include respond(350) {
+                            padding: 0 0 0 30px;
+                        }
+                        li {
+                            font-weight: 400;
+                            @include respond(350) {
+                                font-size: 14px;
+                                margin-bottom: 10px;
+                            }
+                            @include respond(450) {
+                                font-size: 16px;
+                                margin-bottom: 5px;
+                            }
+                            &::marker {
+                                color: $secondColor;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &[data-popup-name="video"] {
+        overflow-y: scroll;
+        @include respond(350) {
+            @include flex;
+        }
+        @include respond(850) {
+            display: block;
+        }
+        .box {
+            width: 800px;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+
+            @include respond(350) {
+                width: 300px;
+                height: 150px;
+            }
+            @include respond(450) {
+                width: 350px;
+                height: 200px;
+            }
+            @include respond(650) {
+                width: 500px;
+                height: 300px;
+            }
+            @include respond(850) {
+                width: 600px;
+                height: 350px;
+            }
+            @include respond(1050) {
+                width: 700px;
+                height: 400px;
+            }
+
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    &[data-popup-name="sectors"] {
+        .box {
+            .body {
+                padding: 15px !important;
+                padding-top: 0;
+                .item {
+                    background-color: #ebfbee;
+                    border-radius: 10px;
+                    padding: 10px;
+                    text-align: center;
+                    img {
+                        width: 65px;
+                        margin-bottom: 15px;
+                    }
+                    h6 {
+                        font-weight: 400;
+                        background-color: #dfeee2;
+                        color: #000;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+    &[data-popup-name="languages"] {
+        overflow-x: hidden;
+        .box {
+            padding: 30px;
+            position: relative;
+            margin: 0 0 0 auto;
+            width: 625px;
+            border-radius: 10px 0 0 10px ;
+            transform: translateX(100%);
+            transition-duration: .5s;
+            @include respond(350){
+            width: 300px;
+            }
+            @include respond(450){
+            width: 350px;
+            }
+            @include respond(650){
+            width: 450px;
+            }
+            @include respond(850){
+            width: 550px;
+            }
+            @include respond(1050){
+            width: 600px;
+            }
+            > i {
+                @include position($t: 20px, $r: 20px);
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .sections {
+                .section {
+                    h3 {
+                        position: relative;
+                        width: fit-content;
+                        font-size: 24px;
+                        margin-bottom: 20px;
+                        &::before {
+                            @include createElement();
+                            @include position($b: -20%, $l: 0);
+                            width: 100px;
+                            height: 3px;
+                            border-radius: 10px;
+                        }
+                    }
+                    li {
+                        color: #000;
+                    }
+                    &:nth-of-type(odd) {
+                        h3,
+                        li i {
+                            color: $firstColor;
+                        }
+                        h3 {
+                            &::before {
+                                background-color: $firstColor;
+                            }
+                        }
+                    }
+                    &:nth-of-type(even) {
+                        h3,
+                        li i {
+                            color: $secondColor;
+                        }
+                        h3 {
+                            &::before {
+                                background-color: $secondColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

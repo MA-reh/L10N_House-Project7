@@ -1,0 +1,39 @@
+@use "../abstracts/" as *;
+
+#Clients {
+    .container {
+        .content {
+            .owl-carousel {
+                .owl-stage {
+                    height: 100%;
+                    @include flex;
+                    .owl-item {
+                        height: 100%;
+                        @include flex;
+                        .item {
+                            img {
+                                width: 200px;
+                                @include flex;
+                            }
+                        }
+                    }
+                }
+                .owl-dots {
+                    .owl-dot {
+                        span {
+                            background-color: $secondColor;
+                            width: 10px;
+                            height: 10px;
+                            opacity: 0.5;
+                        }
+                        &.active {
+                            span {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

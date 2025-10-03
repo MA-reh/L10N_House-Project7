@@ -1,0 +1,33 @@
+@use "../abstracts/" as *;
+
+#Language {
+    .container {
+        .content {
+            @include flex;
+            .btn-corner {
+                position: relative;
+                cursor: pointer;
+                &:hover {
+                    button{
+                        transform: translateY(-10px);
+                    }
+                }
+                button {
+                    text-transform: capitalize;
+                    background-color: #fff;
+                    padding: 10px 15px;
+                    border-radius: 20px;
+                    color: $secondColor;
+                    font-weight: 600;
+                    border: none;
+                    transition-duration: .5s;
+                    border: 2px solid transparent;
+                    &:focus{
+                        border-color: $secondColor;
+                    transition-duration: .3s;
+                }
+                }
+            }
+        }
+    }
+}

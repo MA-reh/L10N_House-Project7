@@ -1,0 +1,129 @@
+@use "../abstracts/" as *;
+
+nav {
+    transition-duration: 0.5s;
+    @include position(fixed, $t: 0px, $l: 0);
+    &.nav-Scrolled {
+        background-color: rgba(255, 255, 255, 0.7);
+        .navbar-brand {
+            width: 8%;
+            @include respond(350) {
+                width: 20%;
+            }
+            @include respond(450) {
+                width: 18%;
+            }
+            @include respond(650) {
+                width: 15%;
+            }
+            @include respond(850) {
+                width: 12%;
+            }
+            @include respond(1050) {
+                width: 10%;
+            }
+        }
+    }
+
+    .navbar-brand {
+        width: 12%;
+        transition-duration: 0.5s;
+        @include respond(350) {
+            width: 30%;
+        }
+        @include respond(450) {
+            width: 25%;
+        }
+        @include respond(650) {
+            width: 22%;
+        }
+        @include respond(850) {
+            width: 18%;
+        }
+        @include respond(1050) {
+            width: 14%;
+        }
+    }
+
+    .navbar-toggler {
+        width: 50px;
+        height: 40px;
+        @include flex($jc: space-evenly);
+        flex-direction: column;
+        border: 2px solid $firstColor;
+        transition-duration: 0.3s;
+        &:focus {
+            border: 2px solid $secondColor;
+            box-shadow: none;
+            span {
+                background-color: $secondColor;
+            }
+        }
+        span {
+            transition-duration: 0.3s;
+            display: block;
+            background-color: $firstColor;
+            @include distance($h: 3px);
+        }
+    }
+
+    .navbar-collapse {
+        ul.navbar-nav {
+            @include respond(350) {
+                margin-top: 10px;
+                border: 1px solid $firstColor;
+                padding: 10px 20px;
+                border-radius: 10px;
+                gap: 10px;
+                background: #ada996;
+                background: -webkit-linear-gradient(to right, #eaeaea, #ada996);
+                background: linear-gradient(to right, #eaeaea, #ada996);
+            }
+            @include respond(1050) {
+                margin-top: 0px;
+                border: none;
+                padding: 0;
+                border-radius: 0px;
+                gap: 0px;
+                background: none;
+            }
+            margin-right: 10px;
+            .nav-item {
+                margin-right: 20px;
+                padding: 5px 0;
+                .nav-link {
+                    cursor: pointer;
+                    padding: 0;
+                    color: $firstColor;
+                    font-weight: 600;
+                    position: relative;
+                    @include respond(350) {
+                        width: fit-content;
+                    }
+                    &::before {
+                        content: "";
+                        background-color: $secondColor;
+                        border-radius: 5px;
+                        @include distance(0%, $h: 2px);
+                        @include position($b: -50%, $l: 50%);
+                        // transform: translateX(-50%);
+                        transition-duration: 0.5s;
+                    }
+                    &.active::before,
+                    &:hover::before {
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+                &:last-child {
+                    margin-right: 0;
+                    .nav-link {
+                        &::after {
+                            content: initial;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
