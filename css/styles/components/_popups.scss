@@ -91,6 +91,7 @@
 
     &[data-popup-name="video"] {
         overflow-y: scroll;
+        @include flex;
         @include respond(350) {
             @include flex;
         }
@@ -165,7 +166,7 @@
             width: 625px;
             border-radius: 10px 0 0 10px ;
             transform: translateX(100%);
-            transition-duration: .5s;
+            transition-duration: 1s;
             @include respond(350){
             width: 300px;
             }

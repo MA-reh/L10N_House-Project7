@@ -8,8 +8,8 @@ $('.owl-carousel').owlCarousel({
     loop: false,
     margin: 15,
     nav: false,
-    autoplay:true,
-    startPosition:15,
+    autoplay: true,
+    startPosition: 15,
     responsive: {
         0: {
             items: 1
@@ -52,8 +52,10 @@ $("#buttonTop").click(function () {
     })
 });
 
-$(`.popup`).click((e) => {
-    closePopup();
+$(`.popup`).click(function() {
+    let language = this.getAttribute("data-popup-name");
+
+    closePopup(language);
 });
 
 $(`.popup .box`).click((e) => {
@@ -73,7 +75,7 @@ $(".navbar .nav-link").click(function (e) {
 
 })
 
-window.addEventListener("DOMContentLoaded",() => {
+window.addEventListener("DOMContentLoaded", () => {
     $(Loading).fadeOut(500)
     $(`body`).css({
         overflowY: "auto",

@@ -74,15 +74,26 @@ function openPopup(popupName) {
         $(`.popup[data-popup-name="${popupName}"]`).fadeIn(1000, function () {
             $(this).find(".box").css("transform", "translateX(0%)")
         });
+    } else if (popupName == "video") {
+        $(`.popup[data-popup-name="${popupName}"]`).fadeIn(1000).addClass("d-flex");
+    } else {
+        $(`.popup[data-popup-name="${popupName}"]`).fadeIn(1000);
     }
-    $(`.popup[data-popup-name="${popupName}"]`).fadeIn(1000);
     $(`body`).css({
         overflow: "hidden",
     });
 }
 
-function closePopup() {
-    $(`.popup`).fadeOut(1000);
+function closePopup(popupName = null) {
+    if (popupName == "languages") {
+        $(`.popup[data-popup-name="${popupName}"] .box`)
+        .css("transform", "translateX(100%)")
+        .parent()
+        .delay(1000)
+        .fadeOut(1000);
+    } else {
+        $(`.popup`).fadeOut(1000);
+    }
     $(`body`).css({
         overflowY: "auto",
     });

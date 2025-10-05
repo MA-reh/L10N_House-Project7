@@ -305,6 +305,9 @@ section.spacial-section .container > i:hover {
 }
 .popup[data-popup-name=video] {
   overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 1300px) {
   .popup[data-popup-name=video] {
@@ -388,7 +391,7 @@ section.spacial-section .container > i:hover {
   width: 625px;
   border-radius: 10px 0 0 10px;
   transform: translateX(100%);
-  transition-duration: 0.5s;
+  transition-duration: 1s;
 }
 @media (max-width: 1300px) {
   .popup[data-popup-name=languages] .box {
