@@ -54,7 +54,6 @@ $("#buttonTop").click(function () {
 
 $(`.popup`).click(function() {
     let language = this.getAttribute("data-popup-name");
-
     closePopup(language);
 });
 
@@ -76,7 +75,7 @@ $(".navbar .nav-link").click(function (e) {
 })
 
 window.addEventListener("DOMContentLoaded", () => {
-    $(Loading).fadeOut(500)
+    $(Loading).fadeOut(1000)
     $(`body`).css({
         overflowY: "auto",
     });

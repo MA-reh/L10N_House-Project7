@@ -75,7 +75,9 @@ function openPopup(popupName) {
             $(this).find(".box").css("transform", "translateX(0%)")
         });
     } else if (popupName == "video") {
-        $(`.popup[data-popup-name="${popupName}"]`).fadeIn(1000).addClass("d-flex");
+        // $(`.popup[data-popup-name="${popupName}"]`).addClass("d-flex").fadeIn(1000);
+        document.querySelector(`.popup[data-popup-name="${popupName}"]`).classList.add("active");
+
     } else {
         $(`.popup[data-popup-name="${popupName}"]`).fadeIn(1000);
     }
@@ -87,10 +89,12 @@ function openPopup(popupName) {
 function closePopup(popupName = null) {
     if (popupName == "languages") {
         $(`.popup[data-popup-name="${popupName}"] .box`)
-        .css("transform", "translateX(100%)")
-        .parent()
-        .delay(1000)
-        .fadeOut(1000);
+            .css("transform", "translateX(100%)")
+            .parent()
+            .delay(1000)
+            .fadeOut(1000);
+    } else if (popupName == "video") {
+        document.querySelector(`.popup[data-popup-name="${popupName}"]`).classList.remove("active");
     } else {
         $(`.popup`).fadeOut(1000);
     }
