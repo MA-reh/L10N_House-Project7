@@ -61,7 +61,7 @@ $(`.popup .box`).click((e) => {
     e.stopPropagation();
 });
 
-$(".navbar .nav-link").click(function (e) {
+$(`.navbar .nav-link[href]`).click(function (e) {
     e.preventDefault();
 
     let sectionName = $(this).attr("href"),
